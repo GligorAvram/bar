@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./indexStyle.css">
+  <title>Bar</title>
+</head>
+<body>
+  <!-- navbar -->
+  <div class="Header"></div>
+  <div class="grid-container">
+    <div class="Picture"><span> picture</span> </div>
+    <div class="ingredients"><span>ingrediente</span></div>     
+  </div>  
+  <div class="Footer">
+    <span>footer</span>
+     <p1 th:text="${randomCocktail.history}"></p1>
+  </div>
+</body>
+</html>
