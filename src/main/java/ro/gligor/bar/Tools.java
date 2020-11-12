@@ -1,49 +1,28 @@
 package ro.gligor.bar;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-import javax.net.ssl.HttpsURLConnection;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
+import java.io.File;
 import java.net.URL;
 
+
 public class Tools {
+//    public static Drink randomCocktail() throws IOException {
+//        URL url = new URL("https://www.thecocktaildb.com/api/json/v1/1/random.php");
+//        ObjectMapper mapper = new ObjectMapper();
+//        Drink cocktail = mapper.readValue(url, Drink.class);
+//
+//        return cocktail;
+//    }
 
-    public String JSonReader(String query_url){
-        HttpsURLConnection con = null;
+    public static Root randomCocktail() {
         try {
-            URL u = new URL(query_url);
-            con = (HttpsURLConnection) u.openConnection();
-
-            con.connect();
-
-
-            BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            StringBuilder sb = new StringBuilder();
-            String line;
-            while ((line = br.readLine()) != null) {
-                sb.append(line + "\n");
-            }
-            br.close();
-            return sb.toString();
-
-
-        } catch (MalformedURLException ex) {
-            ex.printStackTrace();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } finally {
-            if (con != null) {
-                try {
-                    con.disconnect();
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            }
+            ObjectMapper om = new ObjectMapper();
+            Root root = om.readValue(new URL("https://www.thecocktaildb.com/api/json/v1/1/random.php"), Root.class);
+            return root;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return null;
+    return null;
     }
-
-
 }
