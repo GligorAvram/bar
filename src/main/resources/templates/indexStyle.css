@@ -1,43 +1,85 @@
 * {
   margin: 0;
-  background: url("./graphics/static\ background.jpeg") no-repeat center center
-    fixed;
-  background-size: cover;
 }
 
-.Header {
+html {
+  background: url("./graphics/static background.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.header {
   position: fixed;
   top: 0;
   width: 100%;
   height: 5vh;
-  background: rgb(148, 148, 163);
-  background: linear-gradient(
-    90deg,
-    rgba(148, 148, 163, 1) 0%,
-    rgb(78, 3, 3) 100%
-  );
+  background: #9494a3;
+  background: -webkit-gradient(linear, left top, right top, from(#9494a3), to(#4e0303));
+  background: linear-gradient(90deg, #9494a3 0%, #4e0303 100%);
+  z-index: 10;
+}
+
+.body {
+  background-color: purple;
+  top: 5vh;
+  position: absolute;
+  height: 100vh;
+  z-index: 10;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1f)[6];
+      grid-template-columns: repeat(6 1f);
+  -ms-grid-rows: (1f)[6];
+      grid-template-rows: repeat(6 1f);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .grid-container {
-  width: 100%;
-  position: absolute;
-  top: 5vh;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  background-size: cover;
+  position: relative;
 }
 
-.Picture {
-  background: orange;
-}
-.ingredients {
-  background: orchid;
+.grid-container.picture {
+  background-color: orange;
+  grid-column: span 4;
+  grid-row: span 4;
 }
 
-.Footer {
-  position: absolute;
-  width: 100%;
-  bottom: -5vh;
-  background: wheat;
-  z-index: 2;
+.grid-container.ingredients {
+  background-color: orangered;
+  grid-column: span 2;
+  grid-row: span 4;
 }
+
+.grid-container.instructions {
+  background-color: orchid;
+  grid-column: span 6;
+  grid-row: span 2;
+}
+
+.drinkImage {
+  opacity: 0.8;
+  max-width: 70vh;
+}
+
+.ingredients-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 100%;
+}
+
+instructions-container {
+  max-width: 100%;
+}
+/*# sourceMappingURL=indexStyle.css.map */

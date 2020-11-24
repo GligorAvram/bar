@@ -8,15 +8,50 @@
   <title>Bar</title>
 </head>
 <body>
+
   <!-- navbar -->
-  <div class="Header"></div>
-  <div class="grid-container">
-    <div class="Picture"><span> picture</span> </div>
-    <div class="ingredients"><span>ingrediente</span></div>     
-  </div>  
-  <div class="Footer">
-    <span>footer</span>
-     <p1 th:text="${randomCocktail.strDrink}"></p1>
+  <div class="header">
+    <p>navbar</p>
   </div>
+
+
+  <div class="body">
+    <div class="container">
+
+      <div class="grid-container picture">
+        <h1 th:text="${name}">name todel</h1>
+        <div>
+           <!-- <img th:src="${picture}" alt="picture thumb"> -->
+         <img  class="drinkImage" src="./graphics/delete.jpg" alt="todel">
+        </div>
+      </div>
+
+      <div class="grid-container ingredients">
+        <div class="ingredients-container">
+          <div><p1 th:text="${ingredient1}"> ing1 todel</p1></div>
+          <div><p1 th:text="${ingredient2}"> ing1 todel</p1></div>
+          <div><p1 th:text="${ingredient3}"> ing1 todel</p1></div>
+          <div><p1 th:text="${ingredient4}"> ing1 todel</p1></div>
+          <div><p1 th:text="${ingredient5}"> ing1 todel</p1></div>
+          <div><p1 th:text="${ingredient6}"> ing1 todel</p1></div>
+          <div><p1 th:text="${ingredient7}"> ing1 todel</p1></div>
+          <div><p1 th:text="${ingredient8}"> ing1 todel</p1></div>
+          <div><p1 th:text="${ingredient9}"> ing1 todel</p1></div>
+          <div><p1 th:text="${ingredient10}"> ing10 todel</p1></div>
+          <div><p1 th:text="${ingredient11}"> ing1 todel</p1></div>
+          <div><p1 th:text="${ingredient12}"> ing1 todel</p1></div>
+          <div><p1 th:text="${ingredient13}"> ing1 todel</p1></div>
+          <div><p1 th:text="${ingredient14}"> ing1 todel</p1></div>
+          <div><p1 th:text="${ingredient15}"> ing1 todel</p1></div>
+        </div>
+      </div>
+    
+      <div class="grid-container instructions">
+        <div class="instructions-container">instructions
+        
+         <p1 th:text="${instructions}"></p1>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
